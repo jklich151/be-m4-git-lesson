@@ -18,8 +18,4 @@ class OrderItem < ApplicationRecord
     price = OrderItem.find_by(item_id: item_id).price
     count * price
   end
-
-  def self.total(order_id)
-    where(order_id: order_id).pluck(:price).sum
-  end
 end
